@@ -1,5 +1,6 @@
 package com.gustavo.gameList.dto;
 import com.gustavo.gameList.entities.Game;
+import com.gustavo.gameList.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -18,6 +19,14 @@ public class GameMinDTO {
         ano = entity.getAno();
         imgUrl = entity.getImgUrl();
         descricaoCurta = entity.getDescricaoCurta();
+    }
+
+    public GameMinDTO(GameMinProjection projection){
+        id = projection.getId();
+        titulo = projection.getTitulo();
+        ano = projection.getAno();
+        imgUrl = projection.getImgUrl();
+        descricaoCurta = projection.getDescricaoCurta();
     }
 
     public String getTitulo() {
